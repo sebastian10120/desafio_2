@@ -19,6 +19,7 @@ private:
     int tarjetas_a;
     int tarjetas_r;
 public:
+    equipo();
     equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p);
 
     equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p, int falta, int tarjeta_a,int tarjeta_r);
@@ -30,6 +31,22 @@ public:
     void aumentar_pg_equipo();
     void aumentar_pe_equipo();
     void aumentar_pp_equipo();
+
+
+    int get_ranking_fifa() const;
+    string get_pais() const;
+    string get_director() const;
+    string get_federacion() const;
+    string get_confederacion() const;
+    int get_goles_favor() const;
+    int get_goles_contra() const;
+    int get_partidos_ganados() const;
+    int get_partidos_empatados() const;
+    int get_partidos_perdidos() const;
+    int get_faltas() const;
+    int get_tarjetas_amarillas() const;
+    int get_tarjetas_rojas() const;
+
 
     bool  operator==(const equipo& otro);
     equipo comparar_goles_equipo(const equipo& a, const equipo& b);

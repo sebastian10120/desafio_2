@@ -1,6 +1,8 @@
 #include "equipo.h"
 
+equipo::equipo(){
 
+}
 equipo::equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p)
 {
     ranking_fifa = posicion;
@@ -17,7 +19,6 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     tarjetas_a = 0;
     tarjetas_r = 0;
 }
-
 equipo::equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p, int falta, int tarjeta_a,int tarjeta_r)
 {
     ranking_fifa = posicion;
@@ -34,6 +35,8 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     tarjetas_a = tarjeta_a;
     tarjetas_r = tarjeta_r;
 }
+
+
 void equipo::aumentargolequipo(){
     goles_favor++;
 }
@@ -55,6 +58,49 @@ void equipo::aumentar_pe_equipo(){
 void equipo::aumentar_pp_equipo(){
     partidos_p++;
 }
+
+
+int equipo::get_ranking_fifa() const {
+    return ranking_fifa;
+}
+string equipo::get_pais() const {
+    return pais;
+}
+string equipo::get_director() const {
+    return director;
+}
+string equipo::get_federacion() const {
+    return federacion;
+}
+string equipo::get_confederacion() const {
+    return confederacion;
+}
+int equipo::get_goles_favor() const {
+    return goles_favor;
+}
+int equipo::get_goles_contra() const {
+    return goles_contra;
+}
+int equipo::get_partidos_ganados() const {
+    return partidos_g;
+}
+int equipo::get_partidos_empatados() const {
+    return partidos_e;
+}
+int equipo::get_partidos_perdidos() const {
+    return partidos_p;
+}
+int equipo::get_faltas() const {
+    return faltas;
+}
+int equipo::get_tarjetas_amarillas() const {
+    return tarjetas_a;
+}
+int equipo::get_tarjetas_rojas() const {
+    return tarjetas_r;
+}
+
+
 bool equipo::operator==(const equipo& otro){
     return confederacion == otro.confederacion;
 }
