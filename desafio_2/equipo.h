@@ -1,6 +1,7 @@
 #ifndef EQUIPO_H
 #define EQUIPO_H
 #include <string>
+#include "jugador.h"
 using namespace std;
 class equipo
 {
@@ -18,6 +19,9 @@ private:
     int faltas;
     int tarjetas_a;
     int tarjetas_r;
+    jugador jugadores[26];
+    int cantidad_jugadores;
+    int puntaje_eliminatoria;
 public:
     equipo();
     equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p);
@@ -46,10 +50,14 @@ public:
     int get_faltas() const;
     int get_tarjetas_amarillas() const;
     int get_tarjetas_rojas() const;
+    jugador* get_jugadores();
+    int get_cantidad_jugadores() const;
 
 
     bool  operator==(const equipo& otro);
     equipo comparar_goles_equipo(const equipo& a, const equipo& b);
+    void agregar_jugador(jugador a);
+    void set_jugadores(jugador lista[26]);
 };
 
 #endif // CLASE_EQUIPO_H

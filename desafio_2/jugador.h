@@ -6,7 +6,6 @@ class jugador
 {
 private:
     string pais;
-    int numero;
     int camiseta;
     string nombre;
     string apellido;
@@ -32,7 +31,6 @@ public:
 
 
     string getPais() const;
-    int getNumero() const;
     int getCamiseta() const;
     string getNombre() const;
     string getApellido() const;

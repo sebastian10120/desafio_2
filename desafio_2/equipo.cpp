@@ -1,7 +1,26 @@
 #include "equipo.h"
 
 equipo::equipo(){
+    ranking_fifa = 0;
+    pais = "";
+    director = "";
+    federacion = "";
+    confederacion = "";
 
+    goles_favor = 0;
+    goles_contra = 0;
+
+    partidos_g = 0;
+    partidos_e = 0;
+    partidos_p = 0;
+
+    faltas = 0;
+    tarjetas_a = 0;
+    tarjetas_r = 0;
+    cantidad_jugadores = 0;
+    for (int i = 0; i < 26; i++) {
+        jugadores[i] = jugador();
+    }
 }
 equipo::equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p)
 {
@@ -18,6 +37,11 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     faltas = 0;
     tarjetas_a = 0;
     tarjetas_r = 0;
+    cantidad_jugadores = 0;
+    for (int i = 0; i < 26; i++) {
+        jugadores[i] = jugador();
+
+    }
 }
 equipo::equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p, int falta, int tarjeta_a,int tarjeta_r)
 {
@@ -34,6 +58,7 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     faltas = falta;
     tarjetas_a = tarjeta_a;
     tarjetas_r = tarjeta_r;
+    cantidad_jugadores = 0;
 }
 
 
@@ -99,6 +124,12 @@ int equipo::get_tarjetas_amarillas() const {
 int equipo::get_tarjetas_rojas() const {
     return tarjetas_r;
 }
+jugador* equipo::get_jugadores(){
+    return jugadores;
+}
+int equipo::get_cantidad_jugadores() const{
+    return cantidad_jugadores;
+}
 
 
 bool equipo::operator==(const equipo& otro){
@@ -115,4 +146,15 @@ equipo equipo::comparar_goles_equipo(const equipo& a, const equipo& b){
         return a;
     }
 }
-
+void equipo::agregar_jugador(jugador a){
+    if (cantidad_jugadores < 26){
+        jugadores[cantidad_jugadores] = a;
+        cantidad_jugadores++;
+    }
+}
+void equipo::set_jugadores(jugador lista[26]){
+    for (int i = 0; i < 26; i++){
+        jugadores[i] = lista[i];
+    }
+    cantidad_jugadores = 26;
+}

@@ -2,7 +2,15 @@
 
 
 jugador::jugador(){
-
+    pais = "";
+    camiseta = 0;
+    nombre = "";
+    apellido = "";
+    Cantidad_goles = 0;
+    Cantidad_faltas = 0;
+    Cantidad_tarjetas_amarillas = 0;
+    tiempo_jugado = 0;
+    partidos_jugados = 0;
 }
 jugador::jugador(string contry, int camisa, string name, string lastname){
     pais = contry;
@@ -50,9 +58,6 @@ void jugador::aumentar_partido(){
 
 string jugador::getPais() const {
     return pais;
-}
-int jugador::getNumero() const {
-    return numero;
 }
 int jugador::getCamiseta() const {
     return camiseta;
