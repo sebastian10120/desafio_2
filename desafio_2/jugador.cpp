@@ -11,6 +11,7 @@ jugador::jugador(){
     Cantidad_tarjetas_amarillas = 0;
     tiempo_jugado = 0;
     partidos_jugados = 0;
+    asistencias = 0;
 }
 jugador::jugador(string contry, int camisa, string name, string lastname){
     pais = contry;
@@ -22,6 +23,7 @@ jugador::jugador(string contry, int camisa, string name, string lastname){
     Cantidad_tarjetas_amarillas = 0;
     tiempo_jugado = 0;
     partidos_jugados = 0;
+    asistencias = 0;
 }
 jugador::jugador(string contry, int camisa, string name, string lastname,int goles, int faltas,int tarjeta_amarilla, int tarjeta_roja,int tiempo,int partidos) {
     pais = contry;
@@ -54,7 +56,9 @@ void jugador::aumentar_tiempo(){
 void jugador::aumentar_partido(){
     partidos_jugados++;
 }
-
+void jugador::aumentar_asistencias(){
+    asistencias++;
+}
 
 string jugador::getPais() const {
     return pais;

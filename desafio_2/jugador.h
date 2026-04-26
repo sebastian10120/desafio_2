@@ -15,6 +15,7 @@ private:
     int Cantidad_tarjetas_rojas;
     int tiempo_jugado;
     int partidos_jugados;
+    int asistencias;
 
 
 public:
@@ -28,6 +29,7 @@ public:
     void aumentar_t_rojas();
     void aumentar_tiempo();
     void aumentar_partido();
+    void aumentar_asistencias();
 
 
     string getPais() const;
@@ -40,6 +42,8 @@ public:
     int getCantidadTarjetasRojas() const;
     int getTiempoJugado() const;
     int getPartidosJugados() const;
+    int getasistencias() const;
+
 };
 
 #endif // JUGADOR_H

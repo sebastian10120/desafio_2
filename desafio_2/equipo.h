@@ -21,7 +21,7 @@ private:
     int tarjetas_r;
     jugador jugadores[26];
     int cantidad_jugadores;
-    int puntaje_eliminatoria;
+    int puntos;
 public:
     equipo();
     equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p);
@@ -29,12 +29,16 @@ public:
     equipo(int posicion, string pais_origen, string director_tecnico, string federacion_f,string confederacion_c, int goles_f, int goles_c, int partido_g, int partido_e, int partido_p, int falta, int tarjeta_a,int tarjeta_r);
 
     void aumentargolequipo();
+    void aumentargolcontra();
     void aumentar_falta_equipo();
     void aumentar_ta_equipo();
     void aumentar_tr_equipo();
     void aumentar_pg_equipo();
     void aumentar_pe_equipo();
     void aumentar_pp_equipo();
+    void sumar_victoria();
+    void sumar_empate();
+    void sumar_derrota();
 
 
     int get_ranking_fifa() const;
@@ -52,6 +56,7 @@ public:
     int get_tarjetas_rojas() const;
     jugador* get_jugadores();
     int get_cantidad_jugadores() const;
+    int get_puntos() const;
 
 
     bool  operator==(const equipo& otro);

@@ -56,6 +56,11 @@ int numero_random(int a, int b){
     int numero = dis(gen);
     return numero;
 }
+float floaat_random(float a, float b){
+    mt19937 gen(random_device{}());
+    uniform_real_distribution<float> dis(a, b);
+    return dis(gen);
+}
 string producir_estadio() {
     int posicion_estadio = numero_random(0,10);
     int contador = 0;
@@ -280,8 +285,8 @@ equipo** generar_bombos(equipo* original, int total, int tam_bombo) {
         bombos[i] = new equipo[tam_bombo];
     }
     for (int i = 0; i < total; i++) {
-        int num_bombo = i / tam_bombo;   // 0..3
-        int pos = i % tam_bombo;         // 0..11
+        int num_bombo = i / tam_bombo;
+        int pos = i % tam_bombo;
         bombos[num_bombo][pos] = original[i];
     }
 

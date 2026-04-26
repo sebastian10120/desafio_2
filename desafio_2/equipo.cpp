@@ -7,14 +7,12 @@ equipo::equipo(){
     director = "";
     federacion = "";
     confederacion = "";
-
     goles_favor = 0;
     goles_contra = 0;
-
     partidos_g = 0;
     partidos_e = 0;
     partidos_p = 0;
-
+    puntos = 0;
     faltas = 0;
     tarjetas_a = 0;
     tarjetas_r = 0;
@@ -36,6 +34,7 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     partidos_e = partido_e;
     partidos_p = partido_p;
     faltas = 0;
+    puntos = 0;
     tarjetas_a = 0;
     tarjetas_r = 0;
     cantidad_jugadores = 0;
@@ -57,6 +56,7 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
     partidos_e = partido_e;
     partidos_p = partido_p;
     faltas = falta;
+    puntos = 0;
     tarjetas_a = tarjeta_a;
     tarjetas_r = tarjeta_r;
     cantidad_jugadores = 0;
@@ -65,6 +65,9 @@ equipo::equipo(int posicion, string pais_origen, string director_tecnico, string
 
 void equipo::aumentargolequipo(){
     goles_favor++;
+}
+void equipo::aumentargolcontra(){
+    goles_contra++;
 }
 void equipo::aumentar_falta_equipo(){
     faltas++;
@@ -83,6 +86,23 @@ void equipo::aumentar_pe_equipo(){
 }
 void equipo::aumentar_pp_equipo(){
     partidos_p++;
+}
+void equipo::sumar_victoria(){
+    puntos += 3;
+    partidos_g++;
+}
+
+void equipo::sumar_empate(){
+    puntos += 1;
+    partidos_e++;
+}
+
+void equipo::sumar_derrota(){
+    partidos_p++;
+}
+
+int equipo::get_puntos() const {
+    return puntos;
 }
 
 
@@ -132,7 +152,6 @@ int equipo::get_cantidad_jugadores() const{
     return cantidad_jugadores;
 }
 
-
 bool equipo::operator==(const equipo& otro){
     return confederacion == otro.confederacion;
 }
@@ -150,10 +169,6 @@ equipo equipo::comparar_goles_equipo(const equipo& a, const equipo& b){
 void equipo::agregar_jugador(jugador a){
     if (cantidad_jugadores < 26){
         jugadores[cantidad_jugadores] = a;
-
-        cout << "Jugador " << cantidad_jugadores + 1
-             << ": agregado al equipo " << pais << endl;
-
         cantidad_jugadores++;
     }
 }

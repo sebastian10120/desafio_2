@@ -26,6 +26,8 @@ public:
     equipo get_equipo1() const;
     equipo get_equipo2() const;
     fecha get_fecha() const;
+    equipo& get_equipo1();
+    equipo& get_equipo2();
 
 
     void set_fecha(fecha f);

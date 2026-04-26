@@ -20,6 +20,7 @@ void añadir_jugadores(int tam, equipo *original);
 int char_a_entero(string a);
 equipo* agrandarArreglo(equipo* viejo, int &tam);
 int numero_random(int a,int b);
+float float_random(float a, float b);
 int sorteo_bombo();
 string producir_nombre();
 string producir_apellido();
