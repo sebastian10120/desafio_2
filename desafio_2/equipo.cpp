@@ -1,4 +1,5 @@
 #include "equipo.h"
+#include <iostream>
 
 equipo::equipo(){
     ranking_fifa = 0;
@@ -149,6 +150,10 @@ equipo equipo::comparar_goles_equipo(const equipo& a, const equipo& b){
 void equipo::agregar_jugador(jugador a){
     if (cantidad_jugadores < 26){
         jugadores[cantidad_jugadores] = a;
+
+        cout << "Jugador " << cantidad_jugadores + 1
+             << ": agregado al equipo " << pais << endl;
+
         cantidad_jugadores++;
     }
 }
